@@ -1,0 +1,100 @@
+#Kyoto Univ. Server (scbn00)
+Host kyoto_gate
+	HostName scbngate.hepnet.scphys.kyoto-u.ac.jp
+	User nchikuma
+
+#Kyoto Univ. Server (scbn00)
+Host kyoto
+        #HostName scbn00.hepnet.scphys.kyoto-u.ac.jp
+        HostName scbn00
+	User nchikuma
+	ProxyCommand ssh kyoto_gate -W %h:%p
+
+#Kyoto Univ. Server (scbn00)
+Host kyoto_wg
+        #HostName scbn00.hepnet.scphys.kyoto-u.ac.jp
+        HostName scbn00
+	User wagasci_daq
+	ProxyCommand ssh kyoto_wg_gate -W %h:%p
+
+Host kyoto_wg_gate
+	HostName scbngate.hepnet.scphys.kyoto-u.ac.jp
+	User wagasci_daq
+
+Host kyoto-hepserv
+        HostName hepsrv.hepnet.scphys.kyoto-u.ac.jp
+        User ingrid
+
+#Univ. of Tokyo Server (hep)
+Host hep
+	HostName hep.phys.s.u-tokyo.ac.jp
+	User nchikuma
+
+#Univ. of Tokyo Server (hepex1)
+Host hepex1
+	HostName hepex1.phys.s.u-tokyo.ac.jp
+	User nchikuma
+
+#606 Linux
+Host 606
+	HostName beldh12.phys.s.u-tokyo.ac.jp
+	User NaruhiroChikuma
+
+#CentOS7 for SPIROC
+Host wagasci16
+	#HostName 133.11.4.231
+	HostName 133.11.4.225
+	User root
+
+
+#LLR GATE pc
+Host LLR
+	HostName llrgate01.in2p3.fr
+	User chikuma
+	#User naruhiro
+
+#LLR daq pc
+Host LLRdaq
+	HostName llrmppcbench
+	#HostName llrinstrubench.in2p3.fr
+	User root
+	ProxyCommand ssh LLR -W %h:%p
+
+#KEKCC Access server
+Host KEKCCaccess
+        #HostName sshcc1.kek.jp
+        HostName sshcc2.kek.jp
+	User nchikuma
+
+#KEKCC login server
+Host KEKCClogin
+	HostName login.cc.kek.jp
+	User nchikuma
+	ProxyCommand ssh KEKCCaccess -W %h:%p
+
+#Kamioka login server
+Host Kamioka
+	HostName kmgate01.icrr.u-tokyo.ac.jp
+	User nchikuma_s
+
+#Kamioka work server
+Host sukap0003
+	HostName 10.230.11.111
+	User nchikuma 
+	ProxyCommand ssh Kamioka -W %h:%p
+
+
+#WAGASCI DAQ Server
+Host wagasci-daq
+	HostName 10.105.53.87
+	User root
+
+#WAGASCI Analysis Server
+Host wagasci-ana
+	HostName 10.105.54.68
+	User root
+
+#WAGASCI Access Server
+Host wagasci-access
+	HostName 10.105.54.81
+	User root

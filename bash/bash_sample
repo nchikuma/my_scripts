@@ -1,0 +1,16 @@
+alias root='root -l'
+alias sl='echo "work as ls";ls'
+alias l='echo "work as ls -l";ls -l'
+alias ll='echo "work as ls -ltr";ls -ltr'
+alias lll='echo "work as ls -lt";ls -lt'
+alias llll='echo "work as ls -lSh";ls -lSh'
+alias lllll='echo "work as ls -lShr";ls -lShr'
+alias llt='echo "work as ls -ltr --full-time";ls -ltr --full-time'
+alias ..='echo "work as cd ..";cd ..'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ssh='ssh -Y'
+alias vi="vim"
+alias bj='while true;do echo "==================";echo "----- Queue : s ----"; echo -n "Running : "; bjobs|grep RUN|grep " s "|wc -l  ; echo -n "Pending : "; bjobs|grep PEND|grep " s "|wc -l;echo "----- Queue : l -----"; echo -n "Running : "; bjobs|grep RUN|grep " l "|wc -l  ; echo -n "Pending : "; bjobs|grep PEND|grep " l "|wc -l;echo "----- Queue : others -----"; echo -n "Running : "; bjobs|grep RUN|grep -v " l "|grep -v " s "|wc -l  ; echo -n "Pending : "; bjobs|grep PEND|grep -v " l "|grep -v " s "|wc -l;date;sleep 10;done'
+alias T="gnome-terminal --geometry=135x67+960+0 --zoom=0.8;gnome-terminal --geometry=100x30+0+0 --zoom=0.8;gnome-terminal --geometry=135x26+0+600 --zoom=0.8"
